@@ -1,0 +1,12 @@
+
+*.sst
+
+*.wal
+
+*.log
+
+build/
+
+pkg/sql/ebnf/
+
+pkg/sql/yacc/
