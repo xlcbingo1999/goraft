@@ -42,7 +42,7 @@ message ConfigCommand {
 }
 
 message Command {
-    Operate operate = 1;
+    Operate operateType = 1;
     PutCommand put = 2;
     DeleteCommand delete = 3;
     ConfigCommand config = 4;

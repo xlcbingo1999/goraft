@@ -5,8 +5,8 @@ import (
 	"log"
 	"math/rand"
 	"os"
-	"strings"
 
+	"github.com/xlcbingo1999/goraft/pkg/client"
 	"github.com/xlcbingo1999/goraft/pkg/utils"
 	"gopkg.in/yaml.v2"
 )
@@ -57,28 +57,28 @@ func main() {
 	c.Connect()
 
 	// 增加节点
-	if addNode != "" {
-		nodes := make(map[string]string)
-		for _, v := range strings.Split(addNode, ";") {
-			node := strings.Split(v, "=")
-			nodes[node[0]] = node[1]
-		}
-		// 增加到client中
-		c.AddNode(nodes)
-		return
-	}
+	// if addNode != "" {
+	// 	nodes := make(map[string]string)
+	// 	for _, v := range strings.Split(addNode, ";") {
+	// 		node := strings.Split(v, "=")
+	// 		nodes[node[0]] = node[1]
+	// 	}
+	// 	// 增加到client中
+	// 	c.AddNode(nodes)
+	// 	return
+	// }
 
 	// 删除节点
-	if removeNode != "" {
-		nodes := make(map[string]string)
-		for _, v := range strings.Split(removeNode, ";") {
-			node := strings.Split(v, "=")
-			nodes[node[0]] = node[1]
-		}
-		// 删除到client中
-		c.RemoveNode(nodes)
-		return
-	}
+	// if removeNode != "" {
+	// 	nodes := make(map[string]string)
+	// 	for _, v := range strings.Split(removeNode, ";") {
+	// 		node := strings.Split(v, "=")
+	// 		nodes[node[0]] = node[1]
+	// 	}
+	// 	// 删除到client中
+	// 	c.RemoveNode(nodes)
+	// 	return
+	// }
 
 	// 测试
 	if testPut > 0 {
